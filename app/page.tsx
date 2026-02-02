@@ -70,11 +70,11 @@ export default function Home() {
 
   const { contextSafe } = useGSAP();
 
-  const handleProjectHover = contextSafe((e) => {
+  const handleProjectHover = contextSafe((e: React.MouseEvent<HTMLAnchorElement>) => {
     gsap.to(e.currentTarget, { scale: 1.05, duration: 0.3, ease: 'power2.out' });
   });
 
-  const handleProjectLeave = contextSafe((e) => {
+  const handleProjectLeave = contextSafe((e: React.MouseEvent<HTMLAnchorElement>) => {
     gsap.to(e.currentTarget, { scale: 1, duration: 0.3, ease: 'power2.out' });
   });
 
@@ -117,10 +117,10 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-8">About</h2>
           <div className="about-content prose prose-lg max-w-none">
             <p className="text-gray-700 leading-relaxed">
-              I'm a Senior Full Stack Engineer with over 8 years of experience building and owning full-stack production web applications in fast-moving startup environments. I specialize in TypeScript, React, Node.js, and Python, with a strong focus on designing scalable APIs and backend workflows.
+              I&apos;m a Senior Full Stack Engineer with over 8 years of experience building and owning full-stack production web applications in fast-moving startup environments. I specialize in TypeScript, React, Node.js, and Python, with a strong focus on designing scalable APIs and backend workflows.
             </p>
             <p className="text-gray-700 leading-relaxed mt-4">
-              Throughout my career, I've shipped full-stack features end-to-end and collaborated closely with product, design, and engineering teams. I work daily with AI-assisted development tools to improve development speed, code quality, and performance, always focusing on delivering reliable and intuitive user experiences.
+              Throughout my career, I&apos;ve shipped full-stack features end-to-end and collaborated closely with product, design, and engineering teams. I work daily with AI-assisted development tools to improve development speed, code quality, and performance, always focusing on delivering reliable and intuitive user experiences.
             </p>
           </div>
         </div>
