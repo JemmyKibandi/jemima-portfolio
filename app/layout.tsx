@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -29,25 +30,25 @@ export default function RootLayout({
         {/* Navbar */}
         <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-sm border-b border-gray-200 z-50">
           <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" className="text-xl font-bold text-gray-900">
+            <Link href="/" className="text-xl font-bold text-gray-900">
               VF
-            </a>
+            </Link>
             <div className="hidden md:flex space-x-8">
-              <a href="/#about" className="text-gray-600 hover:text-gray-900 transition-colors">
+              <Link href="/#about" className="text-gray-600 hover:text-gray-900 transition-colors">
                 About
-              </a>
-              <a href="/#skills" className="text-gray-600 hover:text-gray-900 transition-colors">
+              </Link>
+              <Link href="/#skills" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Skills
-              </a>
-              <a href="/projects" className="text-gray-600 hover:text-gray-900 transition-colors">
+              </Link>
+              <Link href="/projects" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Projects
-              </a>
-              <a href="/#experience" className="text-gray-600 hover:text-gray-900 transition-colors">
+              </Link>
+              <Link href="/#experience" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Experience
-              </a>
-              <a href="mailto:the.vinicius.creative@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors">
+              </Link>
+              <Link href="mailto:the.vinicius.creative@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors">
                 Contact
-              </a>
+              </Link>
             </div>
           </div>
         </nav>
