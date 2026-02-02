@@ -8,7 +8,7 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function FinTechPlatformPage() {
-  const containerRef = useRef();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     gsap.fromTo('.project-hero', 

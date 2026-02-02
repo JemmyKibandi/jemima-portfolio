@@ -8,7 +8,7 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function ProjectsPage() {
-  const containerRef = useRef();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     gsap.fromTo('.page-header', 
@@ -24,11 +24,11 @@ export default function ProjectsPage() {
 
   const { contextSafe } = useGSAP({ scope: containerRef });
 
-  const handleProjectHover = contextSafe((e) => {
+  const handleProjectHover = contextSafe((e: React.MouseEvent<HTMLAnchorElement>) => {
     gsap.to(e.currentTarget, { scale: 1.05, duration: 0.3, ease: 'power2.out' });
   });
 
-  const handleProjectLeave = contextSafe((e) => {
+  const handleProjectLeave = contextSafe((e: React.MouseEvent<HTMLAnchorElement>) => {
     gsap.to(e.currentTarget, { scale: 1, duration: 0.3, ease: 'power2.out' });
   });
 
