@@ -8,6 +8,7 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
+// Portfolio metadata configuration
 export const metadata: Metadata = {
   title: "Vinicius Ferreira - Senior Full Stack Engineer",
   description: "Senior Full Stack Engineer with 8+ years of experience building production web applications. Specializing in TypeScript, React, Node.js, and Python.",
