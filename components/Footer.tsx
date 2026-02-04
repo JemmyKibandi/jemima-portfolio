@@ -20,10 +20,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-6">
-          <div className="flex flex-col gap-4 sm:grid sm:grid-cols-[1fr_auto_1fr] sm:items-center">
-            <div className="hidden sm:block" />
-            <p className="text-center text-sm text-white/70">© 2026 VF</p>
-            <div className="flex items-center justify-center gap-4 sm:justify-end">
+          <div className="flex flex-col justify-center items-center">
+            <div className="flex items-center gap-4">
               <a
                 href="https://linkedin.com/in/the-vinicius-creative"
                 target="_blank"
@@ -41,6 +39,7 @@ export default function Footer() {
                 <EnvelopeSimple size={20} weight="regular" />
               </a>
             </div>
+            <p className="text-sm text-white/70 mt-2">© 2026 VF</p>
           </div>
         </div>
       </div>

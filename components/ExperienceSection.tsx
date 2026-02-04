@@ -65,8 +65,8 @@ const ExperienceSection = forwardRef<HTMLElement>(
         className="bg-gray-50 px-6 py-24 lg:py-32"
       >
         <div className="max-w-6xl mx-auto">
-          <header className="mb-14">
-            <h2 className="text-4xl sm:text-6xl font-semibold text-gray-900">
+          <header className="mb-14 experience-header">
+            <h2 className="text-4xl sm:text-6xl text-gray-900">
               Experience
             </h2>
             <div className="mt-6 h-px w-full bg-gray-300" />
@@ -74,16 +74,19 @@ const ExperienceSection = forwardRef<HTMLElement>(
 
           <div className="space-y-16">
             {experiences.map((experience, index) => (
-              <div key={experience.company} className="pt-10 first:pt-0">
+              <div
+                key={experience.company}
+                className="experience-entry pt-10 first:pt-0"
+              >
                 {index !== 0 && (
                   <div className="mb-10 h-px w-full bg-gray-300" />
                 )}
-                <h3 className="text-3xl sm:text-4xl  text-gray-900">
+                <h3 className="text-3xl sm:text-4xl text-gray-900">
                   {experience.company}
                 </h3>
 
                 <div className="mt-6 grid gap-8 lg:grid-cols-[0.7fr_0.9fr_1.6fr]">
-                  <div className="space-y-3 text-sm text-gray-600">
+                  <div className="experience-meta space-y-3 text-sm text-gray-600">
                     <p className="text-sm text-gray-500">
                       {experience.tagline}
                     </p>
@@ -129,7 +132,7 @@ const ExperienceSection = forwardRef<HTMLElement>(
                     </div>
                   </dl>
 
-                  <div className="space-y-5 text-base sm:text-lg text-gray-700">
+                  <div className="experience-description space-y-5 text-base sm:text-lg text-gray-700">
                     {experience.description.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}
@@ -145,4 +148,3 @@ const ExperienceSection = forwardRef<HTMLElement>(
 );
 
 export default ExperienceSection;
-

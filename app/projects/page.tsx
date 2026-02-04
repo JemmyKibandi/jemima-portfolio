@@ -4,6 +4,9 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowUpRightIcon } from '@phosphor-icons/react';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -22,87 +25,79 @@ export default function ProjectsPage() {
     );
   }, { scope: containerRef });
 
-  const { contextSafe } = useGSAP({ scope: containerRef });
-
-  const handleProjectHover = contextSafe((e: React.MouseEvent<HTMLAnchorElement>) => {
-    gsap.to(e.currentTarget, { scale: 1.05, duration: 0.3, ease: 'power2.out' });
-  });
-
-  const handleProjectLeave = contextSafe((e: React.MouseEvent<HTMLAnchorElement>) => {
-    gsap.to(e.currentTarget, { scale: 1, duration: 0.3, ease: 'power2.out' });
-  });
-
   const projects = [
     {
       id: 'fintech-platform',
       title: 'PayCore Enterprise',
       description: 'Microservices-based financial platform processing $50M+ monthly transactions with real-time fraud detection and regulatory compliance.',
-      image: 'from-blue-500 to-purple-600',
-      imageText: 'PayCore',
-      technologies: ['Node.js', 'PostgreSQL', 'AWS', 'Kubernetes']
+      image: '/project-fintech.jpg',
     },
     {
       id: 'dataflow-analytics',
       title: 'DataFlow Analytics',
       description: 'Real-time data processing platform handling 10TB+ daily data with predictive insights and automated reporting for enterprise clients.',
-      image: 'from-green-500 to-teal-600',
-      imageText: 'DataFlow',
-      technologies: ['Python', 'FastAPI', 'React', 'Redis']
+      image: '/project-dataflow.jpg',
     },
     {
       id: 'streamhub-platform',
       title: 'StreamHub Platform',
       description: 'Scalable video streaming infrastructure serving 1M+ concurrent users with adaptive bitrate and global CDN distribution.',
-      image: 'from-purple-500 to-pink-600',
-      imageText: 'StreamHub',
-      technologies: ['TypeScript', 'AWS', 'Redis', 'Docker']
-    }
+      image: '/project-streamhub.jpg',
+    },
+    {
+      id: 'ai-analytics',
+      title: 'MiraiCore Insights',
+      description: 'AI-driven forecasting and reporting for enterprise decision makers.',
+      image: '/project-ai.jpg',
+    },
   ];
 
   return (
     <div ref={containerRef} className="min-h-screen bg-white text-gray-900">
       {/* Header */}
-      <div className="bg-gray-50 py-16">
+      <div className="bg-gray-50 py-8">
         <div className="max-w-6xl mx-auto px-6">
-          <h1 className="page-header text-4xl font-bold mb-4">All Projects</h1>
-          <p className="page-header text-xl text-gray-600 max-w-2xl">
-            A collection of enterprise-level projects showcasing full-stack development, system architecture, and scalable solutions.
-          </p>
+          <h1 className="page-header text-4xl mb-4">All Projects</h1>
         </div>
       </div>
 
       {/* Projects Grid */}
       <div className="py-16">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
-              <a
+              <Link
                 key={project.id}
                 href={`/projects/${project.id}`}
-                className="project-grid-item bg-white p-6 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow group"
-                onMouseEnter={handleProjectHover}
-                onMouseLeave={handleProjectLeave}
+                className="project-grid-item group relative block"
               >
-                <div className={`w-full h-48 bg-gradient-to-br ${project.image} rounded-lg mb-4 flex items-center justify-center`}>
-                  <span className="text-white text-xl font-bold">{project.imageText}</span>
+                <div className="relative h-96 overflow-hidden rounded-lg border border-gray-200">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+
+                  <div className="absolute bottom-4 left-1/2 w-[calc(100%-2rem)] -translate-x-1/2">
+                    <div className="flex items-center justify-between gap-4 bg-white px-4 py-3 backdrop-blur-md transition-colors group-hover:bg-white/95">
+                      <div>
+                        <h3 className="text-sm sm:text-base font-semibold text-gray-900">
+                          {project.title}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-gray-600">
+                          {project.description}
+                        </p>
+                      </div>
+                      <span className="group/arrow relative inline-flex h-9 w-9 items-center justify-center rounded-full bg-transparent text-gray-800 transition-colors duration-200">
+                        <ArrowUpRightIcon size={20} weight="regular" />
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 mb-4 line-clamp-3">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

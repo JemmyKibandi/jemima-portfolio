@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { ArrowRightIcon } from "@phosphor-icons/react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -70,15 +71,15 @@ export default function Navbar() {
             Projects
           </Link>
           <span>, </span>
-          <Link href="/#services" className="transition-opacity hover:opacity-70">
-            Services
+          <Link href="/#skills" className="transition-opacity hover:opacity-70">
+            Skills
           </Link>
         </div>
         <a
           href="mailto:the.vinicius.creative@gmail.com"
-          className="inline-flex items-center gap-1 text-sm font-semibold text-gray-900 underline underline-offset-4 decoration-1 decoration-gray-900/60 transition-colors hover:decoration-gray-900"
+          className="inline-flex items-center gap-1 text-sm font-semibold text-gray-900 underline-offset-4 decoration-1 decoration-gray-900/60 transition-colors hover:decoration-gray-900"
         >
-          Start a project <span aria-hidden="true">&rarr;</span>
+          Start a project <ArrowRightIcon size={16} weight="bold" />
         </a>
       </div>
     </nav>

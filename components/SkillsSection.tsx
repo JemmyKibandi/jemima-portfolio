@@ -21,17 +21,15 @@ type SkillCategory = {
 };
 
 const tokenPalette = [
-  "bg-blue-500/75 hover:bg-blue-600/75",
-  "bg-sky-500/75 hover:bg-sky-600/75",
-  "bg-emerald-500/75 hover:bg-emerald-600/75",
-  "bg-teal-500/75 hover:bg-teal-600/75",
-  "bg-violet-500/75 hover:bg-violet-600/75",
-  "bg-purple-500/75 hover:bg-purple-600/75",
-  "bg-yellow-400/80 hover:bg-yellow-500/80",
-  "bg-yellow-500/80 hover:bg-yellow-600/80",
-  "bg-yellow-600/80 hover:bg-yellow-700/80",
-  "bg-pink-500/75 hover:bg-pink-600/75",
-  "bg-rose-500/75 hover:bg-rose-600/75",
+  "bg-rose-100 hover:bg-rose-200 text-rose-900",
+  "bg-pink-100 hover:bg-pink-200 text-pink-900",
+  "bg-sky-100 hover:bg-sky-200 text-sky-900",
+  "bg-blue-100 hover:bg-blue-200 text-blue-900",
+  "bg-yellow-100 hover:bg-yellow-200 text-yellow-900",
+  "bg-emerald-100 hover:bg-emerald-200 text-emerald-900",
+  "bg-green-100 hover:bg-green-200 text-green-900",
+  "bg-violet-100 hover:bg-violet-200 text-violet-900",
+  "bg-purple-100 hover:bg-purple-200 text-purple-900",
 ];
 
 const skillCategories: SkillCategory[] = [
@@ -164,7 +162,7 @@ const SkillsSection = forwardRef<HTMLElement>(function SkillsSection(_, ref) {
                   return (
                     <li
                       key={skill}
-                      className={`rounded-full px-5 py-2.5 text-xl sm:text-2xl leading-tight text-white transition-colors ${tokenClass}`}
+                      className={`rounded-full px-5 py-2.5 text-xl sm:text-2xl leading-tight transition-colors ${tokenClass}`}
                     >
                       {skill}
                     </li>
@@ -180,4 +178,3 @@ const SkillsSection = forwardRef<HTMLElement>(function SkillsSection(_, ref) {
 });
 
 export default SkillsSection;
-
