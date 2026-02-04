@@ -112,11 +112,7 @@ export default function Home() {
               systems into fast, intuitive user experiences.
             </p>
           </div>
-          <div className="flex justify-between">
-            <span className="inline-flex w-fit">
-              Curitiba, Brazil
-            </span>
-          </div>
+          <div>Curitiba, Brazil</div>
         </div>
       </section>
 
