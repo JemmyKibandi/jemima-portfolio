@@ -1,12 +1,42 @@
-"use client";
+﻿"use client";
 
-import { forwardRef } from "react";
+import { forwardRef, JSX } from "react";
+import {
+  CheckCircleIcon,
+  CloudIcon,
+  DatabaseIcon,
+  DesktopIcon,
+  ComputerTowerIcon,
+  ArrowUpRightIcon
+} from "@phosphor-icons/react";
 
-const skillCategories = [
+type SkillCategory = {
+  title: string;
+  accent: string;
+  iconBg: string;
+  iconBgHover: string;
+  accentBorder: string;
+  skills: string[];
+  icon: JSX.Element;
+};
+
+const tokenPalette = [
+  "bg-blue-500/75 hover:bg-blue-600/75",
+  "bg-sky-500/75 hover:bg-sky-600/75",
+  "bg-emerald-500/75 hover:bg-emerald-600/75",
+  "bg-teal-500/75 hover:bg-teal-600/75",
+  "bg-violet-500/75 hover:bg-violet-600/75",
+  "bg-purple-500/75 hover:bg-purple-600/75",
+  "bg-yellow-400/80 hover:bg-yellow-500/80",
+  "bg-yellow-500/80 hover:bg-yellow-600/80",
+  "bg-yellow-600/80 hover:bg-yellow-700/80",
+  "bg-pink-500/75 hover:bg-pink-600/75",
+  "bg-rose-500/75 hover:bg-rose-600/75",
+];
+
+const skillCategories: SkillCategory[] = [
   {
     title: "Frontend",
-    description:
-      "Modern UI engineering and state management for production apps.",
     accent: "text-blue-600",
     iconBg: "bg-blue-100",
     iconBgHover: "group-hover:bg-blue-200/80",
@@ -23,23 +53,10 @@ const skillCategories = [
       "Redux Toolkit",
       "Material UI",
     ],
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        className="h-5 w-5"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.6"
-      >
-        <path d="M4 5h16v10H4z" />
-        <path d="M8 9l-2 2 2 2" />
-        <path d="M16 9l2 2-2 2" />
-      </svg>
-    ),
+    icon: <DesktopIcon size={20} weight="regular" />,
   },
   {
     title: "Backend",
-    description: "Resilient APIs and business logic built for scale and speed.",
     accent: "text-emerald-600",
     iconBg: "bg-emerald-100",
     iconBgHover: "group-hover:bg-emerald-200/80",
@@ -52,47 +69,19 @@ const skillCategories = [
       "REST APIs",
       "GraphQL",
     ],
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        className="h-5 w-5"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.6"
-      >
-        <path d="M5 7h14v4H5z" />
-        <path d="M5 13h14v4H5z" />
-        <path d="M8 9h.01" />
-        <path d="M8 15h.01" />
-      </svg>
-    ),
+    icon: <ComputerTowerIcon size={20} weight="regular" />,
   },
   {
     title: "Databases",
-    description: "Structured and unstructured data systems with fast access.",
     accent: "text-indigo-600",
     iconBg: "bg-indigo-100",
     iconBgHover: "group-hover:bg-indigo-200/80",
     accentBorder: "border-t-indigo-200",
     skills: ["PostgreSQL", "MongoDB", "Redis", "Prisma"],
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        className="h-5 w-5"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.6"
-      >
-        <ellipse cx="12" cy="6" rx="7" ry="3" />
-        <path d="M5 6v8c0 1.7 3.1 3 7 3s7-1.3 7-3V6" />
-        <path d="M5 10c0 1.7 3.1 3 7 3s7-1.3 7-3" />
-      </svg>
-    ),
+    icon: <DatabaseIcon size={20} weight="regular" />,
   },
   {
     title: "Infrastructure & DevOps",
-    description:
-      "Cloud infrastructure, deployment, and reliability foundations.",
     accent: "text-amber-600",
     iconBg: "bg-amber-100",
     iconBgHover: "group-hover:bg-amber-200/80",
@@ -108,40 +97,27 @@ const skillCategories = [
       "Kubernetes",
       "CI/CD",
     ],
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        className="h-5 w-5"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.6"
-      >
-        <path d="M7 17h9a4 4 0 0 0 0-8 5 5 0 0 0-9.5 1.5A3.5 3.5 0 0 0 7 17z" />
-      </svg>
-    ),
+    icon: <CloudIcon size={20} weight="regular" />,
   },
   {
     title: "Testing & Tooling",
-    description: "Quality assurance and developer workflows that stay fast.",
     accent: "text-rose-600",
     iconBg: "bg-rose-100",
     iconBgHover: "group-hover:bg-rose-200/80",
     accentBorder: "border-t-rose-200",
     skills: ["Pytest", "Jest", "Cypress", "Git", "GitHub"],
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        className="h-5 w-5"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.6"
-      >
-        <path d="M9 12l2 2 4-4" />
-        <circle cx="12" cy="12" r="8" />
-      </svg>
-    ),
+    icon: <CheckCircleIcon size={20} weight="regular" />,
   },
 ];
+
+const hashSkill = (value: string) => {
+  let hash = 0;
+  for (let i = 0; i < value.length; i += 1) {
+    hash = (hash << 5) - hash + value.charCodeAt(i);
+    hash |= 0;
+  }
+  return Math.abs(hash);
+};
 
 const SkillsSection = forwardRef<HTMLElement>(function SkillsSection(_, ref) {
   return (
@@ -150,33 +126,24 @@ const SkillsSection = forwardRef<HTMLElement>(function SkillsSection(_, ref) {
         <header className="relative max-w-3xl">
           <div className="flex items-start gap-4">
             <div>
-              <h2 className="mt-3 text-4xl sm:text-5xl leading-[1.05] tracking-tight text-gray-900">
+              <h2 className="mt-3 text-4xl sm:text-5xl font-semibold leading-[1.05] tracking-tight text-gray-900">
                 Skills
               </h2>
             </div>
           </div>
         </header>
 
-        <div className="skills-grid mt-12 grid gap-8 lg:gap-10 md:grid-cols-2">
+        <div className="skills-grid mt-12 columns-1 md:columns-2 gap-8 lg:gap-10">
           {skillCategories.map((category) => (
             <div
               key={category.title}
-              className={`skill-card group relative overflow-hidden rounded-2xl border border-gray-200 ${category.accentBorder} border-t-2 bg-white p-7 hover:border-gray-300`}
+              className={`skill-card group relative mb-8 break-inside-avoid overflow-hidden rounded-2xl border border-gray-200 ${category.accentBorder} border-t-2 bg-white p-7 hover:border-gray-300`}
             >
               <div className="absolute right-6 top-6 text-gray-400/70">
-                <svg
-                  viewBox="0 0 24 24"
-                  className="h-5 w-5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                >
-                  <path d="M7 17L17 7" />
-                  <path d="M9 7h8v8" />
-                </svg>
+                <ArrowUpRightIcon size={20} weight="regular" />
               </div>
 
-              <div className="flex items-start gap-4">
+              <div className="flex items-center gap-4">
                 <span
                   className={`inline-flex h-11 w-11 items-center justify-center rounded-full ${category.iconBg} ${category.iconBgHover} ${category.accent}`}
                 >
@@ -186,21 +153,23 @@ const SkillsSection = forwardRef<HTMLElement>(function SkillsSection(_, ref) {
                   <h3 className="text-lg font-semibold text-gray-900">
                     {category.title}
                   </h3>
-                  <p className="text-sm text-gray-600">
-                    {category.description}
-                  </p>
                 </div>
               </div>
 
-              <ul className="mt-6 flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <li
-                    key={skill}
-                    className="rounded-full border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-700"
-                  >
-                    {skill}
-                  </li>
-                ))}
+              <ul className="mt-5 flex flex-wrap gap-2">
+                {category.skills.map((skill) => {
+                  const tokenClass =
+                    tokenPalette[hashSkill(skill) % tokenPalette.length];
+
+                  return (
+                    <li
+                      key={skill}
+                      className={`rounded-full px-5 py-2.5 text-xl sm:text-2xl leading-tight text-white transition-colors ${tokenClass}`}
+                    >
+                      {skill}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

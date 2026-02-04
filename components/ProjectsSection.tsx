@@ -1,4 +1,5 @@
-﻿import Image from "next/image";
+﻿import { ArrowUpRightIcon } from "@phosphor-icons/react";
+import Image from "next/image";
 import Link from "next/link";
 import { forwardRef } from "react";
 
@@ -67,18 +68,7 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(_, ref)
                       </p>
                     </div>
                     <span className="group/arrow relative inline-flex h-9 w-9 items-center justify-center rounded-full bg-transparent text-gray-800 transition-colors duration-200">
-                      <span className="absolute inset-0 rounded-full bg-black opacity-0 transition-opacity duration-200 group-hover/arrow:opacity-100" />
-                      <svg
-                        viewBox="0 0 24 24"
-                        className="relative h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover/arrow:text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.6"
-                        aria-hidden="true"
-                      >
-                        <path d="M7 17L17 7" />
-                        <path d="M9 7h8v8" />
-                      </svg>
+                      <ArrowUpRightIcon size={20} weight="regular" />
                     </span>
                   </div>
                 </div>
