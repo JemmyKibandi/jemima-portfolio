@@ -1,7 +1,7 @@
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import ExperienceSection from "@/components/ExperienceSection";
+import CVSection from "@/components/CVSection";
 import PageAnimations from "@/components/PageAnimations";
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
 
       <SkillsSection />
 
-      <ExperienceSection />
+      <CVSection />
 
       <ProjectsSection />
     </div>
