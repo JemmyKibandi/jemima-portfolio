@@ -8,7 +8,7 @@ import Image from "next/image";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export default function StreamHubPlatformPage() {
+export default function EmeraldWebPlatformPage() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -93,32 +93,35 @@ export default function StreamHubPlatformPage() {
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500">
             Selected work
           </p>
-          <h1 className="project-title mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900">
-            StreamHub Platform
+          <h1 className="project-title mt-4 text-4xl sm:text-5xl lg:text-6xl font-extralight tracking-tight text-gray-900 font-serif italic">
+            Emerald Web Platform
           </h1>
           <p className="project-description mt-4 max-w-3xl text-lg sm:text-xl text-gray-600">
-            A scalable video streaming infrastructure designed to serve millions
-            of concurrent users with adaptive bitrate streaming and global CDN
-            distribution.
+            Engaging front-end web systems with multimedia integration and
+            WordPress deployments, delivering polished digital experiences for
+            agency clients.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
-              TypeScript
+              React
             </span>
             <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
-              AWS
+              JavaScript
             </span>
             <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
-              Redis
+              CSS3
             </span>
             <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
-              Docker
+              WordPress
+            </span>
+            <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
+              CPanel
             </span>
           </div>
           <div className="project-hero relative mt-10 h-72 sm:h-80 lg:h-96 overflow-hidden rounded-lg border border-gray-200">
             <Image
               src="/project-streamhub.jpg"
-              alt="StreamHub Platform"
+              alt="Emerald Web Platform"
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 70vw, 100vw"
@@ -139,19 +142,17 @@ export default function StreamHubPlatformPage() {
             </div>
             <div className="prose prose-lg max-w-none text-gray-700">
               <p>
-                StreamHub Platform is a comprehensive video streaming
-                infrastructure capable of serving over 1 million concurrent
-                users. The system features adaptive bitrate streaming, global
-                CDN distribution, and real-time analytics to provide seamless
-                video experiences across multiple devices and network
-                conditions.
+                At Emerald Designers, I built and deployed front-end systems for
+                a range of client projects, focusing on delivering engaging,
+                responsive user interfaces using React, JavaScript, and modern
+                CSS. The work spanned custom-built web applications and CMS
+                solutions for diverse client needs.
               </p>
               <p>
-                The platform powers major streaming services and handles
-                critical operations including video transcoding, content
-                delivery, user authentication, and real-time monitoring. All
-                components are designed for high availability and can scale
-                dynamically based on demand patterns.
+                A key focus was maintainability and scalability — enhancing
+                existing codebases, integrating multimedia features to boost
+                engagement, and ensuring all deployments were stable and easy
+                to manage via WordPress and CPanel.
               </p>
             </div>
           </section>
@@ -166,42 +167,42 @@ export default function StreamHubPlatformPage() {
             <div className="features-grid grid gap-6 md:grid-cols-2">
               <div className="feature-card rounded-lg border border-gray-200 bg-white p-6">
                 <h3 className="text-lg font-semibold mb-3">
-                  Adaptive Bitrate Streaming
+                  Responsive UI Development
                 </h3>
                 <p className="text-gray-700">
-                  Dynamic quality adjustment based on network conditions and
-                  device capabilities, ensuring optimal viewing experience with
-                  minimal buffering.
+                  Built pixel-perfect, responsive interfaces using React,
+                  JavaScript, and CSS3 — ensuring a smooth, accessible
+                  experience across all screen sizes.
                 </p>
               </div>
               <div className="feature-card rounded-lg border border-gray-200 bg-white p-6">
                 <h3 className="text-lg font-semibold mb-3">
-                  Global CDN Distribution
+                  Multimedia Integration
                 </h3>
                 <p className="text-gray-700">
-                  Multi-region content delivery network with edge caching,
-                  reducing latency and improving streaming performance
-                  worldwide.
+                  Integrated rich multimedia features — including video, audio,
+                  and interactive elements — to increase user engagement and
+                  time on site for client brands.
                 </p>
               </div>
               <div className="feature-card rounded-lg border border-gray-200 bg-white p-6">
                 <h3 className="text-lg font-semibold mb-3">
-                  Real-time Analytics
+                  Codebase Enhancement
                 </h3>
                 <p className="text-gray-700">
-                  Comprehensive monitoring and analytics dashboard tracking
-                  viewer engagement, performance metrics, and content popularity
-                  in real-time.
+                  Refactored and improved existing codebases for long-term
+                  maintainability, reducing technical debt and making future
+                  feature additions faster and safer.
                 </p>
               </div>
               <div className="feature-card rounded-lg border border-gray-200 bg-white p-6">
                 <h3 className="text-lg font-semibold mb-3">
-                  Auto-scaling Infrastructure
+                  WordPress & CPanel Deployments
                 </h3>
                 <p className="text-gray-700">
-                  Kubernetes-based auto-scaling that dynamically adjusts
-                  resources based on demand, ensuring cost efficiency and
-                  optimal performance.
+                  Deployed and maintained web solutions using WordPress and
+                  CPanel, providing clients with easy-to-manage sites backed by
+                  a stable and reliable hosting setup.
                 </p>
               </div>
             </div>
@@ -217,39 +218,37 @@ export default function StreamHubPlatformPage() {
             <div className="space-y-6 text-gray-700">
               <div>
                 <h3 className="text-lg font-semibold mb-3 text-gray-900">
-                  Streaming Architecture
+                  Frontend Stack
                 </h3>
                 <p className="mb-4">
-                  Built using TypeScript with Node.js for the backend services
-                  and React for the admin dashboard. Implemented HLS and DASH
-                  protocols for adaptive streaming with FFmpeg for video
-                  transcoding.
+                  Projects were built using React for component-driven UIs,
+                  with vanilla JavaScript for interactive features and CSS3 for
+                  styling, animations, and responsive layouts.
                 </p>
                 <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm text-gray-800">
                   <code>
-                    Flow: Video UploadTranscodingCDN DistributionAdaptive
-                    StreamingAnalytics
+                    Stack: React / JavaScript → CSS3 → WordPress → CPanel Deployment
                   </code>
                 </div>
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-3 text-gray-900">
-                  Infrastructure & Scaling
+                  CMS & Deployment
                 </h3>
                 <p className="mb-4">
-                  Deployed on AWS using EKS for container orchestration, S3 for
-                  video storage, and CloudFront for CDN. Redis is used for
-                  session management and real-time data caching.
+                  WordPress was used for content-driven client sites, with
+                  custom theme development and plugin configuration managed
+                  through CPanel for straightforward, reliable hosting.
                 </p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-3 text-gray-900">
-                  Monitoring & Analytics
+                  Maintainability Focus
                 </h3>
                 <p className="mb-4">
-                  Real-time monitoring with custom metrics tracking, automated
-                  alerting, and comprehensive analytics dashboard for content
-                  performance and user engagement insights.
+                  Code quality was a priority throughout — refactoring sessions
+                  were built into the workflow to ensure ongoing scalability
+                  and to reduce the cost of future changes.
                 </p>
               </div>
             </div>
@@ -265,21 +264,21 @@ export default function StreamHubPlatformPage() {
             <div className="metrics-grid grid gap-6 md:grid-cols-3">
               <div className="metric-item rounded-lg border border-gray-200 bg-gray-50 p-6 text-center">
                 <div className="text-3xl font-semibold text-gray-900 mb-2">
-                  1M+
+                  Multiple
                 </div>
-                <div className="text-gray-600">Concurrent Users</div>
+                <div className="text-gray-600">Client Projects Delivered</div>
               </div>
               <div className="metric-item rounded-lg border border-gray-200 bg-gray-50 p-6 text-center">
                 <div className="text-3xl font-semibold text-gray-900 mb-2">
-                  99.9%
+                  Higher
                 </div>
-                <div className="text-gray-600">Uptime</div>
+                <div className="text-gray-600">User Engagement</div>
               </div>
               <div className="metric-item rounded-lg border border-gray-200 bg-gray-50 p-6 text-center">
                 <div className="text-3xl font-semibold text-gray-900 mb-2">
-                  50%
+                  2 Years
                 </div>
-                <div className="text-gray-600">Reduced Buffering</div>
+                <div className="text-gray-600">Stable Production Record</div>
               </div>
             </div>
           </section>
@@ -288,4 +287,3 @@ export default function StreamHubPlatformPage() {
     </div>
   );
 }
-

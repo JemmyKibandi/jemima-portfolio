@@ -8,7 +8,7 @@ import Image from "next/image";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export default function DataFlowAnalyticsPage() {
+export default function OptivenInternalPortalPage() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -93,32 +93,43 @@ export default function DataFlowAnalyticsPage() {
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500">
             Selected work
           </p>
-          <h1 className="project-title mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900">
-            DataFlow Analytics
+          <h1 className="project-title mt-4 text-4xl sm:text-5xl lg:text-6xl font-extralight tracking-tight text-gray-900 font-serif italic">
+            Optiven Internal Portal
           </h1>
           <p className="project-description mt-4 max-w-3xl text-lg sm:text-xl text-gray-600">
-            A real-time data processing platform designed to handle massive
-            datasets with predictive insights and automated reporting
-            capabilities.
+            Responsive internal management system enabling real-time data
+            synchronisation across departments of a leading Kenyan real estate
+            firm.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
-            <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
-              Python
-            </span>
-            <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
-              FastAPI
-            </span>
             <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
               React
             </span>
             <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
-              Redis
+              Node.js
             </span>
+            <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
+              PostgreSQL
+            </span>
+            <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
+              REST APIs
+            </span>
+          </div>
+          <div className="mt-6">
+            <a
+              href="https://github.com/JemmyKibandi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-gray-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-700"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68Z"/></svg>
+              View on GitHub
+            </a>
           </div>
           <div className="project-hero relative mt-10 h-72 sm:h-80 lg:h-96 overflow-hidden rounded-lg border border-gray-200">
             <Image
               src="/project-dataflow.jpg"
-              alt="DataFlow Analytics"
+              alt="Optiven Internal Portal"
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 70vw, 100vw"
@@ -139,19 +150,17 @@ export default function DataFlowAnalyticsPage() {
             </div>
             <div className="prose prose-lg max-w-none text-gray-700">
               <p>
-                DataFlow Analytics is a comprehensive data processing platform
-                capable of handling over 10TB of data daily. The system combines
-                machine learning algorithms with real-time stream processing to
-                provide predictive insights and automated recommendations for
-                enterprise clients.
+                At Optiven Limited, I designed and maintained a suite of
+                responsive internal systems that serve as the operational
+                backbone for the company's departments. The platform enables
+                seamless real-time data synchronisation, replacing manual
+                processes and reducing inter-department communication overhead.
               </p>
               <p>
-                The platform serves Fortune 500 companies across various
-                industries, enabling data-driven decision making through
-                advanced analytics, pattern recognition, and predictive
-                modeling. The system processes structured and unstructured data
-                from multiple sources to generate actionable business
-                intelligence.
+                Working in a fast-paced agile environment, I partnered with
+                stakeholders to align technical solutions with business goals,
+                and conducted performance optimisations and code refactoring
+                that significantly improved system scalability and reliability.
               </p>
             </div>
           </section>
@@ -166,41 +175,42 @@ export default function DataFlowAnalyticsPage() {
             <div className="features-grid grid gap-6 md:grid-cols-2">
               <div className="feature-card rounded-lg border border-gray-200 bg-white p-6">
                 <h3 className="text-lg font-semibold mb-3">
-                  Real-time Stream Processing
+                  Real-time Data Synchronisation
                 </h3>
                 <p className="text-gray-700">
-                  High-throughput data ingestion and processing pipeline
-                  handling millions of events per second with sub-second latency
-                  for time-critical insights.
+                  Cross-department data sync via real-time API integrations,
+                  ensuring all teams work from a single source of truth with
+                  minimal latency.
                 </p>
               </div>
               <div className="feature-card rounded-lg border border-gray-200 bg-white p-6">
                 <h3 className="text-lg font-semibold mb-3">
-                  Predictive Analytics
+                  API Integration Layer
                 </h3>
                 <p className="text-gray-700">
-                  Advanced machine learning models for forecasting trends,
-                  customer behavior, and market dynamics with 95% accuracy
-                  rates.
+                  Implemented real-time REST API integrations that reduced
+                  downtime and enhanced operational efficiency across the
+                  organisation.
                 </p>
               </div>
               <div className="feature-card rounded-lg border border-gray-200 bg-white p-6">
                 <h3 className="text-lg font-semibold mb-3">
-                  Interactive Dashboards
+                  Performance Optimisation
                 </h3>
                 <p className="text-gray-700">
-                  Dynamic visualization platform with customizable dashboards,
-                  drill-down capabilities, and automated report generation.
+                  Conducted systematic code refactoring and performance tuning,
+                  cutting system bottlenecks and ensuring the platform scales
+                  with growing data volumes.
                 </p>
               </div>
               <div className="feature-card rounded-lg border border-gray-200 bg-white p-6">
                 <h3 className="text-lg font-semibold mb-3">
-                  Automated Insights
+                  Responsive UI
                 </h3>
                 <p className="text-gray-700">
-                  AI-driven anomaly detection and pattern recognition that
-                  automatically identifies trends and generates actionable
-                  recommendations.
+                  Built responsive React interfaces that work across desktop and
+                  mobile, giving all staff access to the tools they need
+                  wherever they are.
                 </p>
               </div>
             </div>
@@ -216,39 +226,39 @@ export default function DataFlowAnalyticsPage() {
             <div className="space-y-6 text-gray-700">
               <div>
                 <h3 className="text-lg font-semibold mb-3 text-gray-900">
-                  Data Processing Pipeline
+                  Full-Stack Architecture
                 </h3>
                 <p className="mb-4">
-                  Built using Python with Apache Kafka for stream processing and
-                  Apache Spark for batch processing. Implemented MLOps practices
-                  with automated model training, validation, and deployment
-                  pipelines.
+                  Built with React on the frontend and Node.js on the backend,
+                  communicating via REST APIs. PostgreSQL serves as the primary
+                  database, with optimised queries ensuring fast reads across
+                  large datasets.
                 </p>
                 <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm text-gray-800">
                   <code>
-                    Pipeline: Data IngestionStream ProcessingML
-                    ModelsAnalyticsVisualization
+                    Stack: React → Node.js REST API → PostgreSQL → Real-time Sync
                   </code>
                 </div>
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-3 text-gray-900">
-                  API Architecture
+                  Database Design
                 </h3>
                 <p className="mb-4">
-                  FastAPI-based REST API with async processing capabilities.
-                  Implemented caching strategies using Redis for frequently
-                  accessed data and query optimization.
+                  PostgreSQL with carefully structured schemas and indexing
+                  strategies to support complex cross-department queries at
+                  scale, minimising query times for high-traffic operations.
                 </p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-3 text-gray-900">
-                  Frontend Dashboard
+                  Agile Delivery
                 </h3>
                 <p className="mb-4">
-                  React-based dashboard with D3.js for advanced data
-                  visualizations. Features real-time updates via WebSocket
-                  connections and responsive design for mobile access.
+                  Delivered features iteratively in a high-paced agile
+                  environment, working directly with stakeholders to prioritise
+                  business impact and ensure technical solutions mapped to
+                  operational goals.
                 </p>
               </div>
             </div>
@@ -264,21 +274,21 @@ export default function DataFlowAnalyticsPage() {
             <div className="metrics-grid grid gap-6 md:grid-cols-3">
               <div className="metric-item rounded-lg border border-gray-200 bg-gray-50 p-6 text-center">
                 <div className="text-3xl font-semibold text-gray-900 mb-2">
-                  10TB+
+                  Zero
                 </div>
-                <div className="text-gray-600">Daily Data Processing</div>
+                <div className="text-gray-600">Unplanned Downtime</div>
               </div>
               <div className="metric-item rounded-lg border border-gray-200 bg-gray-50 p-6 text-center">
                 <div className="text-3xl font-semibold text-gray-900 mb-2">
-                  95%
+                  Real-time
                 </div>
-                <div className="text-gray-600">Prediction Accuracy</div>
+                <div className="text-gray-600">Cross-department Sync</div>
               </div>
               <div className="metric-item rounded-lg border border-gray-200 bg-gray-50 p-6 text-center">
                 <div className="text-3xl font-semibold text-gray-900 mb-2">
-                  60%
+                  Significant
                 </div>
-                <div className="text-gray-600">Faster Decision Making</div>
+                <div className="text-gray-600">Bottleneck Reduction</div>
               </div>
             </div>
           </section>
@@ -287,4 +297,3 @@ export default function DataFlowAnalyticsPage() {
     </div>
   );
 }
-

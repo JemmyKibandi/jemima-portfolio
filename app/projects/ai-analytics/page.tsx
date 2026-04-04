@@ -8,43 +8,43 @@ import Image from 'next/image';
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export default function AIAnalyticsPage() {
+export default function MediaWikiContributionsPage() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    gsap.fromTo('.project-hero', 
+    gsap.fromTo('.project-hero',
       { opacity: 0, scale: 0.98 },
-      { opacity: 1, scale: 1, duration: 1, ease: 'power2.out' }
+      { opacity: 1, scale: 1, duration: 1.2, ease: 'expo.out' }
     );
 
-    gsap.fromTo('.project-title', 
+    gsap.fromTo('.project-title',
       { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 1, delay: 0.2, ease: 'power2.out' }
+      { opacity: 1, y: 0, duration: 1.2, delay: 0.2, ease: 'expo.out' }
     );
 
-    gsap.fromTo('.project-description', 
+    gsap.fromTo('.project-description',
       { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 1, delay: 0.35, ease: 'power2.out' }
+      { opacity: 1, y: 0, duration: 1.1, delay: 0.3, ease: 'expo.out' }
     );
 
-    gsap.fromTo('.tech-tag', 
+    gsap.fromTo('.tech-tag',
       { opacity: 0, y: 10 },
-      { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, delay: 0.45, ease: 'power2.out' }
+      { opacity: 1, y: 0, duration: 0.9, stagger: 0.1, delay: 0.4, ease: 'expo.out' }
     );
 
-    gsap.fromTo('.content-section', 
+    gsap.fromTo('.content-section',
       { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, stagger: 0.2, ease: 'power2.out', scrollTrigger: '.content-section' }
+      { opacity: 1, y: 0, duration: 1, stagger: 0.18, ease: 'expo.out', scrollTrigger: '.content-section' }
     );
 
-    gsap.fromTo('.feature-card', 
+    gsap.fromTo('.feature-card',
       { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'power2.out', scrollTrigger: '.features-grid' }
+      { opacity: 1, y: 0, duration: 0.9, stagger: 0.1, ease: 'expo.out', scrollTrigger: '.features-grid' }
     );
 
-    gsap.fromTo('.metric-item', 
+    gsap.fromTo('.metric-item',
       { opacity: 0, y: 16 },
-      { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'power2.out', scrollTrigger: '.metrics-grid' }
+      { opacity: 1, y: 0, duration: 0.9, stagger: 0.1, ease: 'expo.out', scrollTrigger: '.metrics-grid' }
     );
   }, { scope: containerRef });
 
@@ -55,30 +55,32 @@ export default function AIAnalyticsPage() {
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500">
             Selected work
           </p>
-          <h1 className="project-title mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900">
-            AI-Powered Analytics Engine
+          <h1 className="project-title mt-4 text-4xl sm:text-5xl lg:text-6xl font-extralight tracking-tight text-gray-900 font-serif italic">
+            MediaWiki Contributions
           </h1>
           <p className="project-description mt-4 max-w-3xl text-lg sm:text-xl text-gray-600">
-            A machine learning platform that processes massive datasets to deliver predictive analytics and automated insights for enterprise decision-making.
+            Open source PHP contributions to the MediaWiki platform — the software
+            powering Wikipedia — adopted by millions of users worldwide and
+            maintained by a global developer community.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
-              Python
+              PHP
             </span>
             <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
-              FastAPI
+              MediaWiki
             </span>
             <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
-              React
+              Git
             </span>
             <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
-              Redis
+              GitHub
             </span>
           </div>
           <div className="project-hero relative mt-10 h-72 sm:h-80 lg:h-96 overflow-hidden rounded-lg border border-gray-200">
             <Image
               src="/project-ai.jpg"
-              alt="AI-Powered Analytics Engine"
+              alt="MediaWiki Contributions"
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 70vw, 100vw"
@@ -99,14 +101,16 @@ export default function AIAnalyticsPage() {
             </div>
             <div className="prose prose-lg max-w-none text-gray-700">
               <p>
-                Developed a comprehensive AI-powered analytics platform capable of processing over 10TB of data daily.
-                The system combines machine learning algorithms with real-time data processing to provide predictive
-                insights and automated recommendations for enterprise clients.
+                Since June 2021, I have contributed to the MediaWiki open source platform — the
+                software that powers Wikipedia and hundreds of other wikis worldwide. Contributions
+                focus on enhancing the PHP codebase to improve performance, reliability, and the
+                experience of the global user base.
               </p>
               <p>
-                The platform serves Fortune 500 companies across various industries, enabling data-driven decision making
-                through advanced analytics, pattern recognition, and predictive modeling. The system processes structured
-                and unstructured data from multiple sources to generate actionable business intelligence.
+                Working alongside an international developer community, I follow rigorous open-source
+                best practices — peer review, thorough documentation, and backward-compatible
+                changes — to ensure code quality in a codebase serving hundreds of millions of
+                readers daily.
               </p>
             </div>
           </section>
@@ -115,36 +119,40 @@ export default function AIAnalyticsPage() {
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-10 bg-gray-200" />
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-400">
-                Key Features
+                Key Contributions
               </p>
             </div>
             <div className="features-grid grid gap-6 md:grid-cols-2">
               <div className="feature-card rounded-lg border border-gray-200 bg-white p-6">
-                <h3 className="text-lg font-semibold mb-3">Predictive Analytics</h3>
+                <h3 className="text-lg font-semibold mb-3">PHP Codebase Improvements</h3>
                 <p className="text-gray-700">
-                  Advanced machine learning models for forecasting trends, customer behavior,
-                  and market dynamics with 95% accuracy rates.
+                  Enhanced the MediaWiki PHP codebase with targeted improvements to
+                  functionality, performance, and code clarity — benefiting the global
+                  knowledge-sharing mission of the platform.
                 </p>
               </div>
               <div className="feature-card rounded-lg border border-gray-200 bg-white p-6">
-                <h3 className="text-lg font-semibold mb-3">Real-time Processing</h3>
+                <h3 className="text-lg font-semibold mb-3">Open Source Best Practices</h3>
                 <p className="text-gray-700">
-                  Stream processing capabilities handling millions of events per second
-                  with sub-second latency for time-critical insights.
+                  Collaborated with international contributors to uphold rigorous
+                  code review standards, detailed commit messages, and documentation
+                  that makes contributions easy to understand and maintain.
                 </p>
               </div>
               <div className="feature-card rounded-lg border border-gray-200 bg-white p-6">
-                <h3 className="text-lg font-semibold mb-3">Interactive Dashboards</h3>
+                <h3 className="text-lg font-semibold mb-3">Global Reach</h3>
                 <p className="text-gray-700">
-                  Dynamic visualization platform with customizable dashboards,
-                  drill-down capabilities, and automated report generation.
+                  Delivered code improvements that were reviewed, merged, and adopted
+                  across the platform — reaching millions of users and wiki communities
+                  around the world.
                 </p>
               </div>
               <div className="feature-card rounded-lg border border-gray-200 bg-white p-6">
-                <h3 className="text-lg font-semibold mb-3">Automated Insights</h3>
+                <h3 className="text-lg font-semibold mb-3">Long-term Commitment</h3>
                 <p className="text-gray-700">
-                  AI-driven anomaly detection and pattern recognition that automatically
-                  identifies trends and generates actionable recommendations.
+                  Ongoing contributor since 2021, demonstrating sustained engagement
+                  with the open source community and a commitment to free knowledge
+                  beyond professional employment.
                 </p>
               </div>
             </div>
@@ -154,34 +162,37 @@ export default function AIAnalyticsPage() {
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-10 bg-gray-200" />
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-400">
-                Technical Implementation
+                Technical Context
               </p>
             </div>
             <div className="space-y-6 text-gray-700">
               <div>
-                <h3 className="text-lg font-semibold mb-3 text-gray-900">Machine Learning Pipeline</h3>
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">Platform Scale</h3>
                 <p className="mb-4">
-                  Built using Python with scikit-learn, TensorFlow, and PyTorch for model development.
-                  Implemented MLOps practices with automated model training, validation, and deployment pipelines.
+                  MediaWiki is one of the most widely deployed open source software projects in
+                  the world, running Wikipedia and thousands of wikis. Contributing to it means
+                  working within strict quality and compatibility standards at global scale.
                 </p>
                 <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm text-gray-800">
                   <code>
-                    Models: Time Series Forecasting, Classification, Clustering, Anomaly Detection, NLP
+                    Stack: PHP → MediaWiki → Git → Gerrit / GitHub code review
                   </code>
                 </div>
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-3 text-gray-900">API Architecture</h3>
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">Collaboration Model</h3>
                 <p className="mb-4">
-                  FastAPI-based REST API with async processing capabilities. Implemented caching strategies
-                  using Redis for frequently accessed data and query optimization.
+                  All contributions go through peer review by the Wikimedia Foundation's
+                  engineering team and community contributors, ensuring the highest standards
+                  of code quality and backward compatibility.
                 </p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-3 text-gray-900">Frontend Dashboard</h3>
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">Community Impact</h3>
                 <p className="mb-4">
-                  React-based dashboard with D3.js for advanced data visualizations. Features real-time
-                  updates via WebSocket connections and responsive design for mobile access.
+                  Beyond code, contributing to MediaWiki supports the infrastructure of free
+                  knowledge — a mission that aligns with a broader commitment to technology
+                  that serves people everywhere.
                 </p>
               </div>
             </div>
@@ -191,21 +202,21 @@ export default function AIAnalyticsPage() {
             <div className="mb-6 flex items-center gap-3">
               <span className="h-px w-10 bg-gray-200" />
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-400">
-                Results
+                Impact
               </p>
             </div>
             <div className="metrics-grid grid gap-6 md:grid-cols-3">
               <div className="metric-item rounded-lg border border-gray-200 bg-gray-50 p-6 text-center">
-                <div className="text-3xl font-semibold text-gray-900 mb-2">10TB+</div>
-                <div className="text-gray-600">Daily Data Processing</div>
+                <div className="text-3xl font-semibold text-gray-900 mb-2">Millions</div>
+                <div className="text-gray-600">Users Worldwide</div>
               </div>
               <div className="metric-item rounded-lg border border-gray-200 bg-gray-50 p-6 text-center">
-                <div className="text-3xl font-semibold text-gray-900 mb-2">95%</div>
-                <div className="text-gray-600">Prediction Accuracy</div>
+                <div className="text-3xl font-semibold text-gray-900 mb-2">3+ Years</div>
+                <div className="text-gray-600">Active Contribution</div>
               </div>
               <div className="metric-item rounded-lg border border-gray-200 bg-gray-50 p-6 text-center">
-                <div className="text-3xl font-semibold text-gray-900 mb-2">60%</div>
-                <div className="text-gray-600">Faster Decision Making</div>
+                <div className="text-3xl font-semibold text-gray-900 mb-2">Global</div>
+                <div className="text-gray-600">Developer Community</div>
               </div>
             </div>
           </section>

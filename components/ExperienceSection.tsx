@@ -1,57 +1,59 @@
-﻿import { ArrowUpRightIcon } from "@phosphor-icons/react";
+﻿"use client";
+
+import { ArrowUpRightIcon } from "@phosphor-icons/react";
 import { forwardRef } from "react";
 
 const experiences = [
   {
-    company: "MiraiCore JP",
-    tagline: "Enterprise AI systems for regulated industries",
-    dates: "2025 — Present",
-    position: "Full Stack Engineer",
-    location: "Remote, Japan",
-    industry: "AI & Enterprise Software",
-    website: "https://miraicore.jp",
+    company: "Swan Mauritius",
+    tagline: "Financial services through Cybernaptics Mauritius",
+    dates: "Jul 2024 — Present",
+    position: "Lead Software Engineer",
+    location: "Port Louis, Mauritius",
+    industry: "Financial Technology",
+    website: "https://swan.mu",
     description: [
-      "Lead full-stack delivery for AI-driven platforms, owning architecture decisions and implementation across product, data, and infrastructure layers.",
-      "Partner closely with product and design to ship secure, compliant experiences for enterprise customers in regulated markets.",
+      "Develop and maintain secure, scalable Node.js backend services and REST APIs for financial systems, working with MySQL and MariaDB with optimised SQL queries.",
+      "Contribute to front-end integration using React, HTML, and CSS, while managing CI/CD pipelines with GitHub Actions and Docker deployments across multilingual cross-functional teams.",
     ],
   },
   {
-    company: "UrbanInfluence",
-    tagline: "Growth-focused digital platforms for modern brands",
-    dates: "2024 — 2025",
-    position: "Full Stack Engineer",
-    location: "Remote, USA",
-    industry: "Digital Products",
-    website: "https://urbaninfluence.com",
+    company: "Optiven Limited",
+    tagline: "Real estate and investment solutions",
+    dates: "May 2023 — Jul 2024",
+    position: "Software Engineer",
+    location: "Nairobi, Kenya",
+    industry: "Real Estate Tech",
+    website: "https://optiven.co.ke",
     description: [
-      "Built production-grade web applications and performance-critical APIs that supported high-traffic marketing and commerce campaigns.",
-      "Improved delivery velocity by tightening CI workflows, raising test coverage, and introducing reusable frontend patterns.",
+      "Designed and maintained responsive internal systems with React, Node.js, and PostgreSQL, enabling seamless real-time data synchronisation across departments.",
+      "Implemented real-time API integrations and conducted performance optimisations and code refactoring, significantly reducing system bottlenecks and improving long-term scalability.",
     ],
   },
   {
-    company: "Scaleflex",
-    tagline: "Media management and digital asset platforms",
-    dates: "2021 — 2024",
-    position: "Full Stack Engineer",
-    location: "Remote, USA",
-    industry: "Cloud Media",
-    website: "https://www.scaleflex.com",
+    company: "Emerald Designers",
+    tagline: "Digital design and web development agency",
+    dates: "Sep 2021 — Sep 2023",
+    position: "Software Engineer",
+    location: "Remote, Kenya",
+    industry: "Digital Agency",
+    website: "https://emeralddesigners.com",
     description: [
-      "Owned end-to-end feature delivery for asset management tooling, with a focus on reliability, performance, and scalable backend services.",
-      "Collaborated across teams to evolve platform architecture and improve developer experience for internal product squads.",
+      "Built and deployed front-end systems with React, JavaScript, and CSS, delivering engaging and responsive user interfaces for a range of client projects.",
+      "Integrated multimedia features to boost user engagement, and deployed and maintained web solutions using WordPress and CPanel.",
     ],
   },
   {
-    company: "White Prompt",
-    tagline: "Boutique product studio for emerging startups",
-    dates: "2019 — 2021",
-    position: "Full Stack Engineer",
-    location: "On-site, Brazil",
-    industry: "Product Studio",
-    website: "https://whiteprompt.com",
+    company: "Wikimedia",
+    tagline: "Free knowledge for the world",
+    dates: "Jun 2021 — Present",
+    position: "Open Source Contributor",
+    location: "Remote",
+    industry: "Open Source",
+    website: "https://wikimedia.org",
     description: [
-      "Delivered full-stack MVPs and growth-stage features for early-stage founders, balancing speed with long-term maintainability.",
-      "Shipped responsive interfaces and API integrations across multiple verticals, from fintech to marketplaces.",
+      "Contributed to the MediaWiki platform, enhancing the PHP codebase that powers Wikipedia and serves millions of users worldwide.",
+      "Collaborated with an international developer community, strengthening open-source best practices and delivering code improvements adopted at global scale.",
     ],
   },
 ];
@@ -66,8 +68,8 @@ const ExperienceSection = forwardRef<HTMLElement>(
       >
         <div className="max-w-6xl mx-auto">
           <header className="mb-14 experience-header">
-            <h2 className="text-4xl sm:text-6xl text-gray-900">
-              Experience
+            <h2 className="text-4xl sm:text-6xl text-gray-900 font-extralight">
+              Exper<span className="font-serif italic">ience</span>
             </h2>
             <div className="mt-6 h-px w-full bg-gray-300" />
           </header>
@@ -81,8 +83,8 @@ const ExperienceSection = forwardRef<HTMLElement>(
                 {index !== 0 && (
                   <div className="mb-10 h-px w-full bg-gray-300" />
                 )}
-                <h3 className="text-3xl sm:text-4xl text-gray-900">
-                  {experience.company}
+                <h3 className="text-3xl sm:text-4xl text-gray-900 font-extralight">
+                  <span className="font-serif italic">{experience.company}</span>
                 </h3>
 
                 <div className="mt-6 grid gap-8 lg:grid-cols-[0.7fr_0.9fr_1.6fr]">

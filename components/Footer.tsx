@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import { EnvelopeSimple, LinkedinLogo } from "@phosphor-icons/react";
+import { EnvelopeSimple, GithubLogo } from "@phosphor-icons/react";
 
 export default function Footer() {
   return (
@@ -23,23 +23,23 @@ export default function Footer() {
           <div className="flex flex-col justify-center items-center">
             <div className="flex items-center gap-4">
               <a
-                href="https://linkedin.com/in/the-vinicius-creative"
+                href="https://github.com/jemimakibandi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-white/20 hover:text-white"
-                aria-label="LinkedIn"
+                aria-label="GitHub"
               >
-                <LinkedinLogo size={20} weight="regular" />
+                <GithubLogo size={20} weight="regular" />
               </a>
               <a
-                href="mailto:the.vinicius.creative@gmail.com"
+                href="mailto:jemimakibandi378@gmail.com"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-white/20 hover:text-white"
                 aria-label="Email"
               >
                 <EnvelopeSimple size={20} weight="regular" />
               </a>
             </div>
-            <p className="text-sm text-white/70 mt-2">© 2026 VF</p>
+            <p className="text-sm text-white/70 mt-2">© 2026 JK</p>
           </div>
         </div>
       </div>

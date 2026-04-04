@@ -76,7 +76,7 @@ export default function Navbar() {
           </Link>
         </div>
         <a
-          href="mailto:the.vinicius.creative@gmail.com"
+          href="mailto:jemimakibandi378@gmail.com"
           className="inline-flex items-center gap-1 text-sm font-semibold text-gray-900 underline-offset-4 decoration-1 decoration-gray-900/60 transition-colors hover:decoration-gray-900"
         >
           Start a project <ArrowRightIcon size={16} weight="bold" />

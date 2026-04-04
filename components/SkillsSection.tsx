@@ -41,15 +41,14 @@ const skillCategories: SkillCategory[] = [
     accentBorder: "border-t-blue-200",
     skills: [
       "React",
-      "Next.js",
       "TypeScript",
-      "JavaScript",
-      "HTML",
-      "CSS",
+      "JavaScript (ES6+)",
+      "Redux",
+      "HTML5",
+      "CSS3",
       "Tailwind CSS",
-      "Zustand",
-      "Redux Toolkit",
       "Material UI",
+      "Shadcn",
     ],
     icon: <DesktopIcon size={20} weight="regular" />,
   },
@@ -61,11 +60,13 @@ const skillCategories: SkillCategory[] = [
     accentBorder: "border-t-emerald-200",
     skills: [
       "Node.js",
+      "Java",
       "Python",
-      "FastAPI",
-      "Pydantic",
+      "PHP (Laravel)",
+      "Next.js",
       "REST APIs",
-      "GraphQL",
+      "API Integration",
+      "SnapLogic",
     ],
     icon: <ComputerTowerIcon size={20} weight="regular" />,
   },
@@ -75,35 +76,42 @@ const skillCategories: SkillCategory[] = [
     iconBg: "bg-indigo-100",
     iconBgHover: "group-hover:bg-indigo-200/80",
     accentBorder: "border-t-indigo-200",
-    skills: ["PostgreSQL", "MongoDB", "Redis", "Prisma"],
+    skills: ["PostgreSQL", "MongoDB", "MySQL", "MariaDB", "SQL"],
     icon: <DatabaseIcon size={20} weight="regular" />,
   },
   {
-    title: "Infrastructure & DevOps",
+    title: "DevOps & Cloud",
     accent: "text-amber-600",
     iconBg: "bg-amber-100",
     iconBgHover: "group-hover:bg-amber-200/80",
     accentBorder: "border-t-amber-200",
     skills: [
       "AWS",
-      "EC2",
-      "S3",
-      "RDS",
-      "CloudFront",
-      "ECS",
+      "Azure",
+      "Azure DevOps",
       "Docker",
       "Kubernetes",
+      "DigitalOcean",
+      "GitHub Actions",
       "CI/CD",
     ],
     icon: <CloudIcon size={20} weight="regular" />,
   },
   {
-    title: "Testing & Tooling",
+    title: "AI / Data & Tools",
     accent: "text-rose-600",
     iconBg: "bg-rose-100",
     iconBgHover: "group-hover:bg-rose-200/80",
     accentBorder: "border-t-rose-200",
-    skills: ["Pytest", "Jest", "Cypress", "Git", "GitHub"],
+    skills: [
+      "Python (AI/ML)",
+      "AI/ML Integration",
+      "BPM Development",
+      "Git",
+      "GitHub",
+      "GitLab",
+      "Agile",
+    ],
     icon: <CheckCircleIcon size={20} weight="regular" />,
   },
 ];
@@ -124,8 +132,8 @@ const SkillsSection = forwardRef<HTMLElement>(function SkillsSection(_, ref) {
         <header className="relative max-w-3xl">
           <div className="flex items-start gap-4">
             <div>
-              <h2 className="mt-3 text-4xl sm:text-5xl font-semibold leading-[1.05] tracking-tight text-gray-900">
-                Skills
+              <h2 className="mt-3 text-4xl sm:text-5xl font-extralight leading-[1.05] tracking-tight text-gray-900">
+                Sk<span className="font-serif italic">ills</span>
               </h2>
             </div>
           </div>
