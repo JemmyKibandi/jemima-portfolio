@@ -4,10 +4,30 @@ import { ArrowUpRightIcon } from "@phosphor-icons/react";
 import { forwardRef } from "react";
 
 const stats = [
-  { value: "5+", label: "Years of experience" },
-  { value: "4", label: "Roles across 3 companies" },
-  { value: "2", label: "Countries worked in" },
-  { value: "1", label: "AWS certification" },
+  {
+    value: "5+",
+    label: "Years of experience",
+    card: "bg-gradient-to-br from-violet-600 to-purple-700 shadow-violet-500/25",
+    sub: "text-violet-200",
+  },
+  {
+    value: "4",
+    label: "Roles across 3 companies",
+    card: "bg-gradient-to-br from-rose-500 to-pink-600 shadow-rose-500/25",
+    sub: "text-rose-200",
+  },
+  {
+    value: "2",
+    label: "Countries worked in",
+    card: "bg-gradient-to-br from-emerald-500 to-teal-600 shadow-emerald-500/25",
+    sub: "text-emerald-200",
+  },
+  {
+    value: "1",
+    label: "AWS certification",
+    card: "bg-gradient-to-br from-amber-500 to-orange-500 shadow-amber-500/25",
+    sub: "text-amber-100",
+  },
 ];
 
 const education = [
@@ -31,24 +51,31 @@ const education = [
   },
 ];
 
+const purpleGrad = {
+  background: "linear-gradient(135deg, #7c3aed, #a855f7, #ec4899)",
+  WebkitBackgroundClip: "text" as const,
+  WebkitTextFillColor: "transparent" as const,
+  backgroundClip: "text" as const,
+};
+
 const CVSection = forwardRef<HTMLElement>(function CVSection(_, ref) {
   return (
-    <section ref={ref} id="cv" className="bg-gray-50 px-6 py-24 lg:py-32">
+    <section ref={ref} id="cv" className="bg-gradient-to-br from-slate-50 to-indigo-50/40 px-6 py-24 lg:py-32">
       <div className="max-w-6xl mx-auto">
 
         {/* Section header */}
         <header className="mb-14 experience-header">
           <h2 className="text-4xl sm:text-6xl text-gray-900 font-extralight">
-            Cred<span className="font-serif italic">entials</span>
+            Cred<span className="font-serif italic" style={purpleGrad}>entials</span>
           </h2>
-          <div className="mt-6 h-px w-full bg-gray-300" />
+          <div className="mt-6 h-px w-full bg-gradient-to-r from-violet-300 via-fuchsia-200 to-transparent" />
         </header>
 
         {/* Professional summary */}
         <div className="experience-entry">
           <p className="text-2xl sm:text-3xl lg:text-4xl font-extralight text-gray-900 leading-snug max-w-4xl">
             Full-stack engineer with{" "}
-            <span className="font-serif italic">5+ years</span> building
+            <span className="font-serif italic" style={purpleGrad}>5+ years</span> building
             scalable, secure applications across fintech and enterprise — from
             React frontends to Node.js APIs, cloud infrastructure, and AI/ML
             integrations.
@@ -56,20 +83,23 @@ const CVSection = forwardRef<HTMLElement>(function CVSection(_, ref) {
         </div>
 
         {/* Stats */}
-        <div className="experience-entry mt-14 grid grid-cols-2 sm:grid-cols-4 gap-0 border border-gray-200 divide-x divide-gray-200">
+        <div className="experience-entry mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4">
           {stats.map((stat) => (
-            <div key={stat.value} className="px-6 py-8">
-              <p className="text-4xl sm:text-5xl font-extralight text-gray-900 font-serif italic">
+            <div
+              key={stat.value}
+              className={`${stat.card} rounded-2xl px-4 sm:px-6 py-6 sm:py-8 text-white shadow-lg`}
+            >
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-extralight font-serif italic">
                 {stat.value}
               </p>
-              <p className="mt-2 text-xs text-gray-500 leading-relaxed">
+              <p className={`mt-2 text-xs leading-relaxed ${stat.sub}`}>
                 {stat.label}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 h-px w-full bg-gray-300" />
+        <div className="mt-16 h-px w-full bg-gradient-to-r from-violet-200 via-fuchsia-100 to-transparent" />
 
         {/* Education & certifications */}
         <div className="mt-16 space-y-16">
@@ -103,7 +133,7 @@ const CVSection = forwardRef<HTMLElement>(function CVSection(_, ref) {
                 </p>
               </div>
 
-              <div className="mt-10 h-px w-full bg-gray-300" />
+              <div className="mt-10 h-px w-full bg-gray-200" />
             </div>
           ))}
         </div>
@@ -112,7 +142,7 @@ const CVSection = forwardRef<HTMLElement>(function CVSection(_, ref) {
         <div className="experience-entry mt-16 flex flex-col sm:flex-row items-start sm:items-center gap-6">
           <a
             href="mailto:jemimakibandi378@gmail.com"
-            className="inline-flex items-center gap-2 rounded-full bg-gray-900 px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-gray-700"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-violet-600 to-purple-700 px-8 py-3.5 text-sm font-semibold text-white transition-all hover:from-violet-700 hover:to-purple-800 shadow-lg shadow-violet-500/30 hover:shadow-violet-500/40"
           >
             Get in touch <ArrowUpRightIcon size={14} weight="bold" />
           </a>

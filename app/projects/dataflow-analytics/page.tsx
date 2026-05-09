@@ -8,133 +8,72 @@ import Image from "next/image";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
+const TECH_TAGS = [
+  { label: "React", color: "bg-sky-500 text-white" },
+  { label: "Node.js", color: "bg-yellow-500 text-black" },
+  { label: "PostgreSQL", color: "bg-indigo-600 text-white" },
+  { label: "REST APIs", color: "bg-emerald-500 text-white" },
+];
+
+const GH_ICON = (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256">
+    <path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68Z"/>
+  </svg>
+);
+
 export default function OptivenInternalPortalPage() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(
-    () => {
-      gsap.fromTo(
-        ".project-hero",
-        { opacity: 0, scale: 0.98 },
-        { opacity: 1, scale: 1, duration: 1, ease: "power2.out" },
-      );
-
-      gsap.fromTo(
-        ".project-title",
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 1, delay: 0.2, ease: "power2.out" },
-      );
-
-      gsap.fromTo(
-        ".project-description",
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 1, delay: 0.35, ease: "power2.out" },
-      );
-
-      gsap.fromTo(
-        ".tech-tag",
-        { opacity: 0, y: 10 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          stagger: 0.08,
-          delay: 0.45,
-          ease: "power2.out",
-        },
-      );
-
-      gsap.fromTo(
-        ".content-section",
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "power2.out",
-          scrollTrigger: ".content-section",
-        },
-      );
-
-      gsap.fromTo(
-        ".feature-card",
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          stagger: 0.08,
-          ease: "power2.out",
-          scrollTrigger: ".features-grid",
-        },
-      );
-
-      gsap.fromTo(
-        ".metric-item",
-        { opacity: 0, y: 16 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          stagger: 0.08,
-          ease: "power2.out",
-          scrollTrigger: ".metrics-grid",
-        },
-      );
-    },
-    { scope: containerRef },
-  );
+  useGSAP(() => {
+    gsap.fromTo('.project-hero', { opacity: 0, scale: 0.98 }, { opacity: 1, scale: 1, duration: 1, ease: "power2.out" });
+    gsap.fromTo('.project-title', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1, delay: 0.2, ease: "power2.out" });
+    gsap.fromTo('.project-description', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, delay: 0.35, ease: "power2.out" });
+    gsap.fromTo('.tech-tag', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, delay: 0.45, ease: "power2.out" });
+    gsap.fromTo('.content-section', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.2, ease: "power2.out", scrollTrigger: ".content-section" });
+    gsap.fromTo('.feature-card', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: "power2.out", scrollTrigger: ".features-grid" });
+    gsap.fromTo('.metric-item', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: "power2.out", scrollTrigger: ".metrics-grid" });
+  }, { scope: containerRef });
 
   return (
     <div ref={containerRef} className="min-h-screen bg-white text-gray-900">
-      <header className="bg-gray-50 py-20">
+      <header className="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-500">
             Selected work
           </p>
           <h1 className="project-title mt-4 text-4xl sm:text-5xl lg:text-6xl font-extralight tracking-tight text-gray-900 font-serif italic">
             Optiven Internal Portal
           </h1>
           <p className="project-description mt-4 max-w-3xl text-lg sm:text-xl text-gray-600">
-            Responsive internal management system enabling real-time data
-            synchronisation across departments of a leading Kenyan real estate
-            firm.
+            Responsive internal management system enabling real-time data synchronisation across departments of a leading Kenyan real estate firm.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
-            <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
-              React
-            </span>
-            <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
-              Node.js
-            </span>
-            <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
-              PostgreSQL
-            </span>
-            <span className="tech-tag rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700">
-              REST APIs
-            </span>
+            {TECH_TAGS.map(({ label, color }) => (
+              <span key={label} className={`tech-tag rounded-full px-4 py-2 text-sm font-medium shadow-sm ${color}`}>
+                {label}
+              </span>
+            ))}
           </div>
           <div className="mt-6">
             <a
               href="https://github.com/JemmyKibandi"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-gray-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-700"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-600 to-teal-700 px-6 py-3 text-sm font-semibold text-white transition-all hover:from-emerald-700 hover:to-teal-800 shadow-lg shadow-emerald-500/30"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68Z"/></svg>
+              {GH_ICON}
               View on GitHub
             </a>
           </div>
-          <div className="project-hero relative mt-10 h-72 sm:h-80 lg:h-96 overflow-hidden rounded-lg border border-gray-200">
+          <div className="project-hero relative mt-10 h-72 sm:h-80 lg:h-96 overflow-hidden rounded-2xl shadow-2xl shadow-emerald-900/10">
             <Image
-              src="/project-dataflow.jpg"
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
               alt="Optiven Internal Portal"
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 70vw, 100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/40 via-teal-900/10 to-transparent" />
           </div>
         </div>
       </header>
@@ -143,153 +82,75 @@ export default function OptivenInternalPortalPage() {
         <div className="max-w-5xl mx-auto px-6 space-y-16">
           <section className="content-section">
             <div className="mb-6 flex items-center gap-3">
-              <span className="h-px w-10 bg-gray-200" />
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-400">
-                Overview
-              </p>
+              <span className="h-px w-10 bg-emerald-200" />
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-400">Overview</p>
             </div>
             <div className="prose prose-lg max-w-none text-gray-700">
-              <p>
-                At Optiven Limited, I designed and maintained a suite of
-                responsive internal systems that serve as the operational
-                backbone for the company's departments. The platform enables
-                seamless real-time data synchronisation, replacing manual
-                processes and reducing inter-department communication overhead.
-              </p>
-              <p>
-                Working in a fast-paced agile environment, I partnered with
-                stakeholders to align technical solutions with business goals,
-                and conducted performance optimisations and code refactoring
-                that significantly improved system scalability and reliability.
-              </p>
+              <p>At Optiven Limited, I designed and maintained a suite of responsive internal systems that serve as the operational backbone for the company's departments. The platform enables seamless real-time data synchronisation, replacing manual processes and reducing inter-department communication overhead.</p>
+              <p>Working in a fast-paced agile environment, I partnered with stakeholders to align technical solutions with business goals, and conducted performance optimisations and code refactoring that significantly improved system scalability and reliability.</p>
             </div>
           </section>
 
           <section className="content-section">
             <div className="mb-6 flex items-center gap-3">
-              <span className="h-px w-10 bg-gray-200" />
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-400">
-                Key Features
-              </p>
+              <span className="h-px w-10 bg-emerald-200" />
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-400">Key Features</p>
             </div>
             <div className="features-grid grid gap-6 md:grid-cols-2">
-              <div className="feature-card rounded-lg border border-gray-200 bg-white p-6">
-                <h3 className="text-lg font-semibold mb-3">
-                  Real-time Data Synchronisation
-                </h3>
-                <p className="text-gray-700">
-                  Cross-department data sync via real-time API integrations,
-                  ensuring all teams work from a single source of truth with
-                  minimal latency.
-                </p>
-              </div>
-              <div className="feature-card rounded-lg border border-gray-200 bg-white p-6">
-                <h3 className="text-lg font-semibold mb-3">
-                  API Integration Layer
-                </h3>
-                <p className="text-gray-700">
-                  Implemented real-time REST API integrations that reduced
-                  downtime and enhanced operational efficiency across the
-                  organisation.
-                </p>
-              </div>
-              <div className="feature-card rounded-lg border border-gray-200 bg-white p-6">
-                <h3 className="text-lg font-semibold mb-3">
-                  Performance Optimisation
-                </h3>
-                <p className="text-gray-700">
-                  Conducted systematic code refactoring and performance tuning,
-                  cutting system bottlenecks and ensuring the platform scales
-                  with growing data volumes.
-                </p>
-              </div>
-              <div className="feature-card rounded-lg border border-gray-200 bg-white p-6">
-                <h3 className="text-lg font-semibold mb-3">
-                  Responsive UI
-                </h3>
-                <p className="text-gray-700">
-                  Built responsive React interfaces that work across desktop and
-                  mobile, giving all staff access to the tools they need
-                  wherever they are.
-                </p>
-              </div>
+              {[
+                { title: "Real-time Data Synchronisation", body: "Cross-department data sync via real-time API integrations, ensuring all teams work from a single source of truth with minimal latency." },
+                { title: "API Integration Layer", body: "Implemented real-time REST API integrations that reduced downtime and enhanced operational efficiency across the organisation." },
+                { title: "Performance Optimisation", body: "Conducted systematic code refactoring and performance tuning, cutting system bottlenecks and ensuring the platform scales with growing data volumes." },
+                { title: "Responsive UI", body: "Built responsive React interfaces that work across desktop and mobile, giving all staff access to the tools they need wherever they are." },
+              ].map(({ title, body }) => (
+                <div key={title} className="feature-card rounded-2xl border-t-2 border-t-emerald-400 bg-gradient-to-br from-emerald-50 to-teal-50/60 p-6 shadow-sm">
+                  <h3 className="text-lg font-semibold mb-3 text-emerald-900">{title}</h3>
+                  <p className="text-gray-700">{body}</p>
+                </div>
+              ))}
             </div>
           </section>
 
           <section className="content-section">
             <div className="mb-6 flex items-center gap-3">
-              <span className="h-px w-10 bg-gray-200" />
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-400">
-                Technical Implementation
-              </p>
+              <span className="h-px w-10 bg-emerald-200" />
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-400">Technical Implementation</p>
             </div>
             <div className="space-y-6 text-gray-700">
               <div>
-                <h3 className="text-lg font-semibold mb-3 text-gray-900">
-                  Full-Stack Architecture
-                </h3>
-                <p className="mb-4">
-                  Built with React on the frontend and Node.js on the backend,
-                  communicating via REST APIs. PostgreSQL serves as the primary
-                  database, with optimised queries ensuring fast reads across
-                  large datasets.
-                </p>
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm text-gray-800">
-                  <code>
-                    Stack: React → Node.js REST API → PostgreSQL → Real-time Sync
-                  </code>
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">Full-Stack Architecture</h3>
+                <p className="mb-4">Built with React on the frontend and Node.js on the backend, communicating via REST APIs. PostgreSQL serves as the primary database, with optimised queries ensuring fast reads across large datasets.</p>
+                <div className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-4 text-sm text-emerald-900 font-mono">
+                  Stack: React → Node.js REST API → PostgreSQL → Real-time Sync
                 </div>
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-3 text-gray-900">
-                  Database Design
-                </h3>
-                <p className="mb-4">
-                  PostgreSQL with carefully structured schemas and indexing
-                  strategies to support complex cross-department queries at
-                  scale, minimising query times for high-traffic operations.
-                </p>
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">Database Design</h3>
+                <p>PostgreSQL with carefully structured schemas and indexing strategies to support complex cross-department queries at scale, minimising query times for high-traffic operations.</p>
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-3 text-gray-900">
-                  Agile Delivery
-                </h3>
-                <p className="mb-4">
-                  Delivered features iteratively in a high-paced agile
-                  environment, working directly with stakeholders to prioritise
-                  business impact and ensure technical solutions mapped to
-                  operational goals.
-                </p>
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">Agile Delivery</h3>
+                <p>Delivered features iteratively in a high-paced agile environment, working directly with stakeholders to prioritise business impact and ensure technical solutions mapped to operational goals.</p>
               </div>
             </div>
           </section>
 
           <section className="content-section">
             <div className="mb-6 flex items-center gap-3">
-              <span className="h-px w-10 bg-gray-200" />
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gray-400">
-                Results
-              </p>
+              <span className="h-px w-10 bg-emerald-200" />
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-400">Results</p>
             </div>
-            <div className="metrics-grid grid gap-6 md:grid-cols-3">
-              <div className="metric-item rounded-lg border border-gray-200 bg-gray-50 p-6 text-center">
-                <div className="text-3xl font-semibold text-gray-900 mb-2">
-                  Zero
+            <div className="metrics-grid grid gap-4 md:grid-cols-3">
+              {[
+                { value: "Zero", label: "Unplanned Downtime" },
+                { value: "Real-time", label: "Cross-department Sync" },
+                { value: "Significant", label: "Bottleneck Reduction" },
+              ].map(({ value, label }) => (
+                <div key={label} className="metric-item rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-700 p-6 text-center text-white shadow-lg shadow-emerald-500/20">
+                  <div className="text-3xl font-semibold mb-2">{value}</div>
+                  <div className="text-emerald-100 text-sm">{label}</div>
                 </div>
-                <div className="text-gray-600">Unplanned Downtime</div>
-              </div>
-              <div className="metric-item rounded-lg border border-gray-200 bg-gray-50 p-6 text-center">
-                <div className="text-3xl font-semibold text-gray-900 mb-2">
-                  Real-time
-                </div>
-                <div className="text-gray-600">Cross-department Sync</div>
-              </div>
-              <div className="metric-item rounded-lg border border-gray-200 bg-gray-50 p-6 text-center">
-                <div className="text-3xl font-semibold text-gray-900 mb-2">
-                  Significant
-                </div>
-                <div className="text-gray-600">Bottleneck Reduction</div>
-              </div>
+              ))}
             </div>
           </section>
         </div>

@@ -10,13 +10,15 @@ const featured = [
     slug: "fintech-platform",
     title: "Swan Financial API",
     description: "Secure Node.js REST APIs and backend services for financial systems.",
-    image: "/project-fintech.jpg",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    accent: "from-blue-600/80 to-indigo-800/60",
   },
   {
     slug: "dataflow-analytics",
     title: "Optiven Internal Portal",
     description: "Responsive internal management system with real-time data sync.",
-    image: "/project-dataflow.jpg",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+    accent: "from-emerald-600/80 to-teal-800/60",
   },
 ];
 
@@ -30,7 +32,7 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(
         <header className="max-w-3xl flex items-end justify-between">
           <h2 className="mt-3 text-4xl sm:text-5xl tracking-tight text-gray-900 font-extralight">
             Projects and{" "}
-            <span className="font-serif italic">case studies.</span>
+            <span className="font-serif italic text-violet-700">case studies.</span>
           </h2>
           <Link
             href="/projects"
@@ -47,18 +49,18 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(
               href={`/projects/${project.slug}`}
               className="project-card group relative block"
             >
-              <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden border border-gray-200">
+              <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden rounded-2xl shadow-xl shadow-gray-900/10">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
                   sizes="(min-width: 1024px) 45vw, 100vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+                <div className={`absolute inset-0 bg-gradient-to-t ${project.accent} opacity-70`} />
 
                 <div className="absolute bottom-4 left-1/2 w-[calc(100%-2rem)] -translate-x-1/2">
-                  <div className="flex items-center justify-between gap-4 bg-white px-4 py-3 transition-colors group-hover:bg-white/95">
+                  <div className="flex items-center justify-between gap-4 bg-white/95 backdrop-blur-sm px-4 py-3 rounded-xl transition-colors group-hover:bg-white">
                     <div>
                       <h3 className="text-sm sm:text-base font-semibold text-gray-900">
                         {project.title}
@@ -67,8 +69,8 @@ const ProjectsSection = forwardRef<HTMLElement>(function ProjectsSection(
                         {project.description}
                       </p>
                     </div>
-                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center text-gray-800">
-                      <ArrowUpRightIcon size={20} weight="regular" />
+                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-violet-100 text-violet-700 group-hover:bg-violet-600 group-hover:text-white transition-colors">
+                      <ArrowUpRightIcon size={18} weight="bold" />
                     </span>
                   </div>
                 </div>

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { forwardRef, JSX } from "react";
 import {
@@ -15,21 +15,22 @@ type SkillCategory = {
   accent: string;
   iconBg: string;
   iconBgHover: string;
-  accentBorder: string;
+  cardGradient: string;
+  borderColor: string;
   skills: string[];
   icon: JSX.Element;
 };
 
 const tokenPalette = [
-  "bg-rose-100 hover:bg-rose-200 text-rose-900",
-  "bg-pink-100 hover:bg-pink-200 text-pink-900",
-  "bg-sky-100 hover:bg-sky-200 text-sky-900",
-  "bg-blue-100 hover:bg-blue-200 text-blue-900",
-  "bg-yellow-100 hover:bg-yellow-200 text-yellow-900",
-  "bg-emerald-100 hover:bg-emerald-200 text-emerald-900",
-  "bg-green-100 hover:bg-green-200 text-green-900",
-  "bg-violet-100 hover:bg-violet-200 text-violet-900",
-  "bg-purple-100 hover:bg-purple-200 text-purple-900",
+  "bg-rose-500 hover:bg-rose-600 text-white",
+  "bg-fuchsia-500 hover:bg-fuchsia-600 text-white",
+  "bg-sky-500 hover:bg-sky-600 text-white",
+  "bg-blue-600 hover:bg-blue-700 text-white",
+  "bg-amber-500 hover:bg-amber-600 text-white",
+  "bg-emerald-500 hover:bg-emerald-600 text-white",
+  "bg-teal-500 hover:bg-teal-600 text-white",
+  "bg-violet-500 hover:bg-violet-600 text-white",
+  "bg-indigo-600 hover:bg-indigo-700 text-white",
 ];
 
 const skillCategories: SkillCategory[] = [
@@ -38,7 +39,8 @@ const skillCategories: SkillCategory[] = [
     accent: "text-blue-600",
     iconBg: "bg-blue-100",
     iconBgHover: "group-hover:bg-blue-200/80",
-    accentBorder: "border-t-blue-200",
+    cardGradient: "bg-gradient-to-br from-white to-blue-50/60",
+    borderColor: "border-t-blue-400",
     skills: [
       "React",
       "TypeScript",
@@ -57,7 +59,8 @@ const skillCategories: SkillCategory[] = [
     accent: "text-emerald-600",
     iconBg: "bg-emerald-100",
     iconBgHover: "group-hover:bg-emerald-200/80",
-    accentBorder: "border-t-emerald-200",
+    cardGradient: "bg-gradient-to-br from-white to-emerald-50/60",
+    borderColor: "border-t-emerald-400",
     skills: [
       "Node.js",
       "Java",
@@ -75,7 +78,8 @@ const skillCategories: SkillCategory[] = [
     accent: "text-indigo-600",
     iconBg: "bg-indigo-100",
     iconBgHover: "group-hover:bg-indigo-200/80",
-    accentBorder: "border-t-indigo-200",
+    cardGradient: "bg-gradient-to-br from-white to-indigo-50/60",
+    borderColor: "border-t-indigo-400",
     skills: ["PostgreSQL", "MongoDB", "MySQL", "MariaDB", "SQL"],
     icon: <DatabaseIcon size={20} weight="regular" />,
   },
@@ -84,7 +88,8 @@ const skillCategories: SkillCategory[] = [
     accent: "text-amber-600",
     iconBg: "bg-amber-100",
     iconBgHover: "group-hover:bg-amber-200/80",
-    accentBorder: "border-t-amber-200",
+    cardGradient: "bg-gradient-to-br from-white to-amber-50/60",
+    borderColor: "border-t-amber-400",
     skills: [
       "AWS",
       "Azure",
@@ -102,7 +107,8 @@ const skillCategories: SkillCategory[] = [
     accent: "text-rose-600",
     iconBg: "bg-rose-100",
     iconBgHover: "group-hover:bg-rose-200/80",
-    accentBorder: "border-t-rose-200",
+    cardGradient: "bg-gradient-to-br from-white to-rose-50/60",
+    borderColor: "border-t-rose-400",
     skills: [
       "Python (AI/ML)",
       "AI/ML Integration",
@@ -133,7 +139,7 @@ const SkillsSection = forwardRef<HTMLElement>(function SkillsSection(_, ref) {
           <div className="flex items-start gap-4">
             <div>
               <h2 className="mt-3 text-4xl sm:text-5xl font-extralight leading-[1.05] tracking-tight text-gray-900">
-                Sk<span className="font-serif italic">ills</span>
+                Sk<span className="font-serif italic text-violet-700">ills</span>
               </h2>
             </div>
           </div>
@@ -143,15 +149,15 @@ const SkillsSection = forwardRef<HTMLElement>(function SkillsSection(_, ref) {
           {skillCategories.map((category) => (
             <div
               key={category.title}
-              className={`skill-card group relative mb-8 break-inside-avoid overflow-hidden rounded-2xl border border-gray-200 ${category.accentBorder} border-t-2 bg-white p-7 hover:border-gray-300`}
+              className={`skill-card group relative mb-8 break-inside-avoid overflow-hidden rounded-2xl border border-gray-100 ${category.borderColor} border-t-2 ${category.cardGradient} p-7 shadow-sm hover:shadow-md transition-shadow duration-200`}
             >
-              <div className="absolute right-6 top-6 text-gray-400/70">
+              <div className="absolute right-6 top-6 text-gray-300 group-hover:text-gray-400 transition-colors">
                 <ArrowUpRightIcon size={20} weight="regular" />
               </div>
 
               <div className="flex items-center gap-4">
                 <span
-                  className={`inline-flex h-11 w-11 items-center justify-center rounded-full ${category.iconBg} ${category.iconBgHover} ${category.accent}`}
+                  className={`inline-flex h-11 w-11 items-center justify-center rounded-full ${category.iconBg} ${category.iconBgHover} ${category.accent} transition-colors`}
                 >
                   {category.icon}
                 </span>
@@ -170,7 +176,7 @@ const SkillsSection = forwardRef<HTMLElement>(function SkillsSection(_, ref) {
                   return (
                     <li
                       key={skill}
-                      className={`rounded-full px-5 py-2.5 text-xl sm:text-2xl leading-tight transition-colors ${tokenClass}`}
+                      className={`rounded-full px-5 py-2.5 text-xl sm:text-2xl leading-tight font-medium transition-colors cursor-default shadow-sm ${tokenClass}`}
                     >
                       {skill}
                     </li>

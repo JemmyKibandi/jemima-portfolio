@@ -43,10 +43,10 @@ export default function Navbar() {
   const navClassName = [
     "fixed top-0 inset-x-0 z-50 border-b",
     isScrolled
-      ? "bg-white/90 backdrop-blur-sm border-gray-200/80"
-      : "bg-white border-gray-200",
+      ? "bg-white/95 backdrop-blur-sm border-gray-200/80"
+      : "bg-white/60 backdrop-blur-sm border-violet-100",
     isHidden ? "-translate-y-full" : "translate-y-0",
-    "transition-[transform,background-color,backdrop-filter] duration-200 ease-out motion-reduce:transition-none",
+    "transition-[transform,background-color,backdrop-filter,border-color] duration-200 ease-out motion-reduce:transition-none",
   ].join(" ");
 
   const containerClassName = [
@@ -77,7 +77,7 @@ export default function Navbar() {
         </div>
         <a
           href="mailto:jemimakibandi378@gmail.com"
-          className="inline-flex items-center gap-1 text-sm font-semibold text-gray-900 underline-offset-4 decoration-1 decoration-gray-900/60 transition-colors hover:decoration-gray-900"
+          className="inline-flex items-center gap-1 text-sm font-semibold text-violet-700 underline-offset-4 decoration-1 decoration-violet-700/60 transition-colors hover:text-violet-900"
         >
           Start a project <ArrowRightIcon size={16} weight="bold" />
         </a>
